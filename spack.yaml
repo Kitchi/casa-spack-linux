@@ -1,0 +1,46 @@
+spack:
+  specs:
+    # Build tools
+    - cmake
+    - ccache
+    - pkgconf
+    - swig
+    - bison
+
+    # Java (needed by CASA build tooling)
+    - openjdk@11
+
+    # Core science libraries
+    - cfitsio
+    - wcslib
+    - fftw precision=float,double  # covers fftw-3 and fftw-3-single
+    - eigen@3.4
+    - gsl
+    - openblas
+
+    # XML / serialisation
+    - xerces-c
+    - libxml2
+    - libxslt
+
+    # MPI
+    - openmpi
+
+    # gRPC / Protobuf
+    # grpc@1.67 hard-constrains abseil-cpp@20240116.1:20240117.0, giving a consistent
+    # abseil/re2/protobuf set. Unpinned grpc pulls abseil@20260107 which breaks re2@2023-09-01.
+    - grpc@1.67 cxxstd=17
+    - protobuf@26.1
+
+    # Python (CASA tested with 3.12)
+    - python@3.12
+
+  packages:
+    all:
+      compiler: [gcc@8.5.0]
+
+  concretizer:
+    unify: true
+    reuse: true
+
+  view: true
