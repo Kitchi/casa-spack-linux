@@ -1,3 +1,8 @@
+# DEPRECATED
+
+This repo is deprecated. Look at https://github.com/Kitchi/CASA-spack for the most recent version of these scripts.
+
+
 # CASA Spack Build Environment for Linux
 
 Spack environment for CASA6 build dependencies on Linux (RHEL 8 / x86_64). Make sure
